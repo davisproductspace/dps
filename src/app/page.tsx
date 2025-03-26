@@ -2,13 +2,20 @@
 
 import Link from "next/link"
 import Image from "next/image";
+
 import { useRef, useEffect, useState } from "react";
-import MentorProfile from "@/components/landing/MentorProfile";
-import ScrollBar from "@/components/landing/ScrollBar";
+
+//hero and product
 import { TextReveal } from "@/components/landing/TextReveal";
-import FellowshipReveal from "@/components/landing/FellowshipReveal";
 import WordCarousel from "@/components/landing/WordCarousel";
+// fellowship section
+import ScrollBar from "@/components/landing/ScrollBar";
+import FellowshipReveal from "@/components/landing/FellowshipReveal";
+import { fellowshipCards } from "@/data/fellowship-cards";
+//who we are
 import SocialPic1 from '@/assets/images/social-pic1.jpg';
+// mentors
+import MentorProfile from "@/components/landing/MentorProfile";
 
 export default function Page() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -115,7 +122,7 @@ export default function Page() {
 
             {/* right side - workshop and capstone component */}
             <div className="flex items-center gap-x-6">
-              <FellowshipReveal targetRef={fellowshipScrollRef} />
+              <FellowshipReveal targetRef={fellowshipScrollRef} cards={fellowshipCards} />
               <ScrollBar targetRef={sectionRef} />
             </div>
           </div>
