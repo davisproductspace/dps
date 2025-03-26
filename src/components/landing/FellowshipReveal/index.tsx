@@ -13,7 +13,7 @@ import FellowshipCard from "@/components/landing/FellowshipCard";
 import ScrollBar from "@/components/landing/ScrollBar";
 
 interface FellowshipRevealProps {
-  targetRef: React.RefObject<HTMLElement>;
+  targetRef: React.RefObject<HTMLElement | null>;
 }
 
 export default function FellowshipReveal({ targetRef }: FellowshipRevealProps) {

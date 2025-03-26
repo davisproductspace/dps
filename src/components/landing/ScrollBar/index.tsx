@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { useState } from "react";
 
 interface ScrollBarProps {
-  targetRef: React.RefObject<HTMLElement>;
+  targetRef: React.RefObject<HTMLElement | null>;
 }
 
 export default function ScrollBar({ targetRef }: ScrollBarProps) {
