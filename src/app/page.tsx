@@ -8,7 +8,6 @@ import ScrollBar from "@/components/landing/ScrollBar";
 import { TextReveal } from "@/components/landing/TextReveal";
 import FellowshipReveal from "@/components/landing/FellowshipReveal";
 import WordCarousel from "@/components/landing/WordCarousel";
-
 import SocialPic1 from '@/assets/images/social-pic1.jpg';
 
 export default function Page() {
