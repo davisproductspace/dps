@@ -1,103 +1,168 @@
+"use client"
+
+import Link from "next/link"
 import Image from "next/image";
+import { useRef, useEffect, useState } from "react";
+import MentorProfile from "@/components/landing/MentorProfile";
+import ScrollBar from "@/components/landing/ScrollBar";
+import { TextReveal } from "@/components/landing/TextReveal";
+import FellowshipReveal from "@/components/landing/FellowshipReveal";
+import WordCarousel from "@/components/landing/WordCarousel";
 
-export default function Home() {
+import SocialPic1 from '@/assets/images/social-pic1.jpg';
+
+export default function Page() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const fellowshipScrollRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
+      {/* hero section -- fix bg lol */}
+      <section className="min-h-screen relative w-full overflow-hidden">
+        <img
+          src="/images/stacked-logos.svg"
+          alt="stacked logos background"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="w-full px-[7.5rem] absolute bottom-[9rem] z-10">
+          <WordCarousel />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* space page context to horiz padding 120px each side*/}
+      <div className="w-full px-[7.5rem]">
+        {/* what is product */}
+        <section className="min-h-screen">
+          <TextReveal
+            heading={
+              <h2
+                className="text-[2.75rem] font-semibold leading-none bg-gradient-to-r from-[#765DF2] to-[#ffffff] bg-clip-text text-transparent">
+                What Is Product?
+              </h2>
+            }
+            content={[
+              "A product manager is the CEO of a product. They communicate with customers to understand their needs, come up with solutions that address them, and collaborate with designers, engineers, and marketers to transform those ideas into",
+              <span
+                key="highlight"
+                className="bg-gradient-to-l from-[#765DF2] to-[#BFB2FF] bg-clip-text text-transparent font-semibold"
+              >
+                products that people love.
+              </span>,
+            ]}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </section>
+
+        {/* who we are */}
+        <section className="min-h-screen flex flex-col justify-center bg-black text-white">
+          <div className="flex flex-col gap-y-[2rem]">
+            {/* pics top row */}
+            <div className="flex justify-between gap-[3.75rem]">
+              <div className="w-[224px] h-[216px] rounded-xl overflow-hidden">
+                <Image
+                  src={SocialPic1}
+                  alt="social group picture"
+                  width={224}
+                  height={216}
+                  className="object-cover object-bottom"
+                />
+              </div>
+                <div className="bg-white w-[24rem] h-[13.5rem] rounded-xl" />
+                <div className="bg-white w-[24rem] h-[13.5rem] rounded-xl" />
+            </div>
+
+            {/* text with pics bottom row */}
+            <div className="flex justify-between gap-[3.75rem]">
+              {/* who we are text block */}
+              <div className="w-[14rem] h-[13.5rem] flex flex-col justify-center gap-[1rem]">
+                <h3 className="text-[2rem] font-bold text-left leading-snug bg-gradient-to-r from-[#765DF2] to-[#BFB2FF] bg-clip-text text-transparent">
+                  Who We Are
+                </h3>
+                <p className="text-white text-base font-normal font-sans max-w-[30rem]">
+                  We’re a national community of students with a mission to become the world’s next generation of product leaders.
+                </p>
+              </div>
+
+              <div className="bg-white w-[30rem] h-[13.5rem] rounded-xl" />
+              <div className="bg-white w-[13.5rem] h-[13.5rem] rounded-xl" />
+            </div>
+          </div>
+        </section>
+
+        {/* meet the fellowship */}
+        <section 
+        ref={fellowshipScrollRef}
+        className="relative h-[300vh]">
+          <div className="sticky top-0 h-screen flex items-center justify-between">
+            {/* left text content - meet the fellowship, stays pinned */}
+            <div className="max-w-xl space-y-[1rem]">
+              <p className="text-base font-semibold text-white tracking-normal font-sans">
+                What We Offer
+              </p>
+              <h2 className="text-[3.5rem] font-semibold font-sans leading-tight">
+                Meet the <br />
+                <span className="bg-gradient-to-r from-[#765DF2] to-[#BFB2FF] bg-clip-text text-transparent">
+                  Fellowship.
+                </span>
+              </h2>
+              <p className="w-[26.5rem] text-base font-sans leading-tight">
+                An immersive eight-week program in which you learn product management by doing product management.
+              </p>
+
+              <button className="bg-white text-black font-medium px-5 py-2 rounded-md mt-[1.5rem]">
+                Join the Pack
+              </button>
+            </div>
+
+            {/* right side - workshop and capstone component */}
+            <div className="flex items-center gap-x-6">
+              <FellowshipReveal targetRef={fellowshipScrollRef} />
+              <ScrollBar targetRef={sectionRef} />
+            </div>
+          </div>
+        </section>
+
+        {/* mentors section */}
+        <section className="flex flex-col justify-between">
+          {/* text content */}
+          <div className="text-left max-w-3xl space-y-4">
+            <p className="text-[1rem] font-medium text-white">That’s right! Our Fellowship is...</p>
+            <h2 className="text-[2.25rem] font-semibold text-indigo-400 leading-tight bg-gradient-to-r from-[#765DF2] to-[#ffffff] bg-clip-text text-transparent">
+              Entirely Industry-Led.
+            </h2>
+            <p className="text-base font-medium text-white">
+              Our workshop leaders and Capstone mentors are from the world’s top technology companies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-4 gap-x-[60px] gap-y-[50px]">
+            <MentorProfile
+              imageSrc="/mentors/caitlyn.jpeg" name="Caitlyn Liu" title="PM II" company="Uber"
+            />
+            <MentorProfile
+              name="Nagi SriRanga" title="Director of PM" company="Ruckus"
+            />
+            <MentorProfile
+              imageSrc="/mentors/asha.jpeg" name="Asha Anand" title="Technical PM" company="Microsoft"
+            />
+            <MentorProfile
+              name="Lovlesh Chhabra" title="Director of PM" company="Meta"
+            />
+            <MentorProfile
+              imageSrc="/mentors/caitlyn.jpeg" name="Caitlyn Liu" title="PM II" company="Uber"
+            />
+            <MentorProfile
+              name="Nagi SriRanga" title="Director of PM" company="Ruckus"
+            />
+            <MentorProfile
+              imageSrc="/mentors/asha.jpeg" name="Asha Anand" title="Technical PM" company="Microsoft"
+            />
+            <MentorProfile
+              name="Lovlesh Chhabra" title="Director of PM" company="Meta"
+            />
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }
