@@ -24,18 +24,18 @@ export default function ScrollBar({ targetRef }: ScrollBarProps) {
   return (
     <div className="absolute top-1/2 right-[-2rem] translate-y-[-50%] flex flex-col items-center gap-2 z-50 text-white font-medium text-xs tracking-wide">
       {/* current card number */}
-      <div className="text-[#A594FD]">{`0${activeIndex + 1}`}</div>
+      <div className="text-[#e06287]">{`0${activeIndex + 1}`}</div>
 
       {/* scroll track */}
       <div className="relative w-[1.5px] h-[425px] bg-white/20 overflow-hidden rounded-full">
         <motion.div
-          className="absolute top-0 bg-[#A594FD] w-full"
+          className="absolute top-0 bg-gradient-to-b from-[#E06287] to-[#765DF2] w-full"
           style={{ height: fillHeight }}
         />
       </div>
 
       {/* total cards */}
-      <div className="text-white">03</div>
+      <div className="text-[#765df2]">03</div>
     </div>
   );
 }

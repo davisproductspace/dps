@@ -29,7 +29,7 @@ export default function WordCarousel() {
   return (
     <div className="text-[4rem] font-medium leading-none flex flex-col gap-1 h-[13.5rem]">
       {/* top line */}
-      <span className="text-white">We</span>
+      <span className="text-[#3a3a3a]">We</span>
 
       {/* middle word scroll */}
       <div className="h-[4.5rem] overflow-hidden">
@@ -41,7 +41,7 @@ export default function WordCarousel() {
             <div
               key={i}
               className={`h-[4.5rem] ${
-                word === "Are" ? "text-white" : "bg-gradient-to-r from-[#765DF2] to-[#ffffff] bg-clip-text text-transparent"
+                word === "Are" ? "text-[#3a3a3a]" : "bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent"
               }`}
             >
               {word}
@@ -55,8 +55,8 @@ export default function WordCarousel() {
         <span
             className={`text-[4rem] leading-none transition-colors duration-500 ${
             showFinal
-                ? "bg-gradient-to-r from-[#765DF2] to-[#A594FD] bg-clip-text text-transparent"
-                : "text-white"
+                ? "bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent"
+                : "text-[#3a3a3a]"
             }`}
         >
             Product

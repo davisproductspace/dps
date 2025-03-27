@@ -27,7 +27,7 @@ export function TextReveal({
         )}
 
         {/* animated paragraph */}
-        <p className="text-[2.25rem] font-semibold text-white font-sans pr-[13rem] flex flex-wrap leading-snug">
+        <p className="text-[2.25rem] font-semibold text-[#3a3a3a] font-sans pr-[13rem] flex flex-wrap leading-snug">
         {content.map((chunk, idx) => {
           if (typeof chunk === "string") {
             const words = chunk.split(" ");
