@@ -52,7 +52,7 @@ export default function FellowshipReveal({ targetRef, cards }: FellowshipRevealP
   return (
     <div
       ref={localRef}
-      className="relative w-[31.25rem] h-[28rem] overflow-hidden"
+      className="relative flex items-center h-[31.25rem] w-[28rem] overflow-hidden"
     >
       {/* if scroll hasn't started, lock in the first card */}
       {!hasEntered && <FellowshipCard {...cards[0].props} />}

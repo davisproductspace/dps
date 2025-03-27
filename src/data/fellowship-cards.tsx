@@ -5,6 +5,18 @@ import TeslaLogo from "@/assets/icons/tesla.svg";
 import GMLogo from "@/assets/icons/gm.svg";
 import LogoBox from "@/components/landing/LogoBox";
 import LogosMarquee from "@/components/landing/LogosMarquee";
+import WorkshopBox from "@/components/landing/WorkshopBox";
+
+const workshops = [
+  { week: 1, title: "User Research & Problem Definition" },
+  { week: 2, title: "Product Ideation & Feasibility Analysis" },
+  { week: 3, title: "Documentation in Product Management" },
+  { week: 4, title: "User Flow Mapping & Product Design" },
+  { week: 5, title: "Agile Methodologies & Collaboration" },
+  { week: 6, title: "Product Testing & Iteration" },
+  { week: 7, title: "Go-to-Market Strategy & Marketing" },
+  { week: 8, title: "Landing a Job in Product Management" },
+];
 
 export const fellowshipCards = [
   {
@@ -30,6 +42,21 @@ export const fellowshipCards = [
     },
   },
   {
+    key: "workshops",
+    props: {
+      title: "Weekly Workshops",
+      middleContent: (
+        <div className="grid grid-cols-2 gap-x-[28px] gap-y-4 mt-[29px] justify-center">
+          {workshops.map((w) => (
+            <div className="w-full max-w-[174px]">
+              <WorkshopBox {...w} />
+            </div>
+          ))}
+        </div>
+      ),
+    },
+  },  
+  {
     key: "capstone",
     props: {
       title: "The Capstone",
@@ -42,24 +69,6 @@ export const fellowshipCards = [
         <div className="flex gap-4">
           <img src="/capstone1.png" alt="Capstone 1" className="w-1/2 rounded-lg" />
           <img src="/capstone2.png" alt="Capstone 2" className="w-1/2 rounded-lg" />
-        </div>
-      ),
-    },
-  },
-  {
-    key: "alumni",
-    props: {
-      title: "Alumni Support",
-      description:
-        "Fellowship doesn’t end after 8 weeks — our alumni community stays active through mentorship and events.",
-      subtext:
-        "You'll gain access to a network of product leaders across industries who continue to support one another beyond the program.",
-      buttonText: "See Alumni Stories",
-      middleContent: (
-        <div className="flex gap-4 justify-start">
-          <div className="bg-white/10 p-2 rounded-lg text-sm">Figma</div>
-          <div className="bg-white/10 p-2 rounded-lg text-sm">Slack</div>
-          <div className="bg-white/10 p-2 rounded-lg text-sm">LinkedIn</div>
         </div>
       ),
     },

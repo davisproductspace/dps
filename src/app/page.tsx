@@ -122,7 +122,7 @@ export default function Page() {
             </div>
 
             {/* right side - workshop and capstone component */}
-            <div className="flex items-center gap-x-6">
+            <div className="flex items-center">
               <FellowshipReveal targetRef={fellowshipScrollRef} cards={fellowshipCards} />
               <ScrollBar targetRef={sectionRef} />
             </div>
