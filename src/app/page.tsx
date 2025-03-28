@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 //hero and product
+import Navbar from "@/components/NavBar";
 import { TextReveal } from "@/components/landing/TextReveal";
 import WordCarousel from "@/components/landing/WordCarousel";
 // fellowship section
@@ -24,6 +25,7 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
+      <Navbar />
       {/* hero section -- fix bg lol */}
       <section className="min-h-screen relative w-full overflow-hidden">
         <img
@@ -137,12 +139,12 @@ export default function Page() {
             <h2 className="text-[2.25rem] font-semibold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent leading-tight bg-gradient-to-r from-[#765DF2] to-[#ffffff] bg-clip-text text-transparent">
               Entirely Industry-Led.
             </h2>
-            <p className="text-base font-medium">
+            <p className="text-base font-medium mb-8">
               Our workshop leaders and Capstone mentors are from the world’s top technology companies.
             </p>
           </div>
 
-          <div className="grid grid-cols-4 gap-x-[60px] gap-y-[50px]">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 w-full">
             {mentors.map((mentor, i) => (
               <MentorProfile key={i} {...mentor} />
             ))}

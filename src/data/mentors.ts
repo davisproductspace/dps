@@ -3,12 +3,13 @@ export const mentors = [
       name: "Caitlyn Liu",
       title: "PM II",
       company: "Uber",
-      imageSrc: "/mentors/caitlyn.jpeg",
+      imageSrc: "/images/mentors/caitlyn.png",
     },
     {
       name: "Nagi SriRanga",
       title: "Director of PM",
       company: "Ruckus",
+      imageSrc: "images/mentors/test.jpg",
     },
     {
       name: "Asha Anand",
