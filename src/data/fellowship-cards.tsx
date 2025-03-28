@@ -18,6 +18,14 @@ const workshops = [
   { week: 8, title: "Landing a Job in Product Management" },
 ];
 
+const logoRow = [
+  <LogoBox key="uber"><UberLogo className="w-full h-full text-white" /></LogoBox>,
+  <LogoBox key="microsoft"><MicrosoftLogo className="w-full h-full text-white" /></LogoBox>,
+  <LogoBox key="meta"><MetaLogo className="w-full h-full text-white" /></LogoBox>,
+  <LogoBox key="tesla"><TeslaLogo className="w-full h-full text-white" /></LogoBox>,
+  <LogoBox key="gm"><GMLogo className="w-full h-full text-white" /></LogoBox>,
+];
+
 export const fellowshipCards = [
   {
     key: "weekly",
@@ -26,18 +34,13 @@ export const fellowshipCards = [
       description:
         "Our Fellowship consists of eight activity-based workshops led by industry product leaders.",
       subtext1:
-        "Each workshop covers a stage of the product development life-cycle – idea, research, design, test, launch, and iteration. They take place every Tuesday, from 7-9 PM.",
+        "Each workshop covers a stage of the product development life-cycle – idea, research, design, test, launch, and iteration.",
       subtext2: "They take place every Tuesday, from 7-9PM.",
       middleContent: (
-        <LogosMarquee
-          logos={[
-            <LogoBox><UberLogo className="w-full h-full text-white" /></LogoBox>,
-            <LogoBox><MicrosoftLogo className="w-full h-full text-white" /></LogoBox>,
-            <LogoBox><MetaLogo className="w-full h-full text-white" /></LogoBox>,
-            <LogoBox><TeslaLogo className="w-full h-full text-white" /></LogoBox>,
-            <LogoBox><GMLogo className="w-full h-full text-white" /></LogoBox>,
-          ]}
-        />
+        <div>
+          <LogosMarquee logos={[...logoRow, ...logoRow]} speed={25} />
+          <LogosMarquee logos={[...logoRow, ...logoRow]} speed={30} reverse />
+        </div>
       ),
     },
   },
@@ -62,14 +65,18 @@ export const fellowshipCards = [
       title: "The Capstone",
       description:
         "To apply workshop knowledge, our Fellowship also includes a Capstone.",
-      subtext:
+      subtext1:
         "Build a product in a team of four, with expert guidance from an industry mentor focused on your team’s success. No coding skills required.",
       buttonText: "View Our Past Projects",
       middleContent: (
-        <div className="flex gap-4">
-          <img src="/capstone1.png" alt="Capstone 1" className="w-1/2 rounded-lg" />
-          <img src="/capstone2.png" alt="Capstone 2" className="w-1/2 rounded-lg" />
+        <div
+        className="w-[376px] h-[156px] flex-shrink-0 rounded-[16px] bg-[#FDF9FF] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)]"
+      >
+        {/* temp - change inside here */}
+        <div className="w-full h-full flex items-center justify-center text-black font-medium">
+          Capstone Preview Box
         </div>
+      </div>
       ),
     },
   },

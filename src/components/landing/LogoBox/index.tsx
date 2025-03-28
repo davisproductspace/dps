@@ -6,7 +6,7 @@ interface LogoBoxProps {
 
 export default function LogoBox({ children }: LogoBoxProps) {
   return (
-    <div className="w-[70px] h-[70px] flex items-center justify-center rounded-2xl bg-black shadow-[0_1px_2px_rgba(255,255,255,0.1)]">
+    <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#fdfaff] shadow-[0_1px_2px_rgba(255,255,255,0.1)]">
       {/* auto-scaling container */}
       <div className="flex items-center justify-center w-10 h-10">
         <div className="w-full h-full flex items-center justify-center">
