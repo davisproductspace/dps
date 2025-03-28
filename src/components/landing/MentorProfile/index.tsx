@@ -28,7 +28,7 @@ interface MentorCardProps {
   
         {/* name + title */}
         <p className="text-[20px] font-semibold">{name}</p>
-        <p className="text-[16px] font-normal mt-1">
+        <p className="text-[14px] font-normal mt-1">
           {title} @ <span className="font-semibold">{company}</span> {logo}
         </p>
       </div>

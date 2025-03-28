@@ -25,7 +25,6 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
-      <Navbar />
       {/* hero section -- fix bg lol */}
       <section className="min-h-screen relative w-full overflow-hidden">
         <img
@@ -132,7 +131,7 @@ export default function Page() {
         </section>
 
         {/* mentors section */}
-        <section className="flex flex-col justify-between">
+        <section className="flex flex-col justify-between mb-[160px]">
           {/* text content */}
           <div className="text-left max-w-3xl space-y-4">
             <p className="text-[1rem] font-medium">That’s right! Our Fellowship is...</p>

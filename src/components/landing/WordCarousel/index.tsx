@@ -18,7 +18,7 @@ export default function WordCarousel() {
         setShowFinal(false);
         setIndex(0);
       }
-    }, 2500);
+    }, 1750);
 
     return () => clearInterval(interval);
   }, [index, showFinal]);
