@@ -6,6 +6,7 @@ import GMLogo from "@/assets/icons/gm.svg";
 import LogoBox from "@/components/landing/LogoBox";
 import LogosMarquee from "@/components/landing/LogosMarquee";
 import WorkshopBox from "@/components/landing/WorkshopBox";
+import Image from "next/image";
 
 const workshops = [
   { week: 1, title: "User Research & Problem Definition" },
@@ -18,13 +19,19 @@ const workshops = [
   { week: 8, title: "Landing a Job in Product Management" },
 ];
 
-const logoRow = [
-  <LogoBox key="uber"><UberLogo className="w-full h-full text-white" /></LogoBox>,
-  <LogoBox key="microsoft"><MicrosoftLogo className="w-full h-full text-white" /></LogoBox>,
-  <LogoBox key="meta"><MetaLogo className="w-full h-full text-white" /></LogoBox>,
-  <LogoBox key="tesla"><TeslaLogo className="w-full h-full text-white" /></LogoBox>,
-  <LogoBox key="gm"><GMLogo className="w-full h-full text-white" /></LogoBox>,
+const logoData = [
+  { id: "uber", Icon: UberLogo },
+  { id: "microsoft", Icon: MicrosoftLogo },
+  { id: "meta", Icon: MetaLogo },
+  { id: "tesla", Icon: TeslaLogo },
+  { id: "gm", Icon: GMLogo },
 ];
+
+const logoRow = logoData.map(({ id, Icon }) => (
+  <LogoBox key={id}>
+    <Icon className="w-full h-full text-white" />
+  </LogoBox>
+));
 
 export const fellowshipCards = [
   {
@@ -38,12 +45,23 @@ export const fellowshipCards = [
       subtext2: "They take place every Tuesday, from 7-9PM.",
       middleContent: (
         <div>
-          <LogosMarquee logos={[...logoRow, ...logoRow]} speed={25} />
-          <LogosMarquee logos={[...logoRow, ...logoRow]} speed={30} reverse />
+          <LogosMarquee logos={logoRow} speed={25} />
+          <LogosMarquee
+            logos={logoData
+              .slice() // avoid mutating original
+              .reverse()
+              .map(({ id, Icon }) => (
+                <LogoBox key={`reversed-${id}`}>
+                  <Icon className="w-full h-full text-white" />
+                </LogoBox>
+              ))}
+            speed={30}
+            reverse
+          />
         </div>
       ),
     },
-  },
+  },  
   {
     key: "workshops",
     props: {
@@ -51,7 +69,7 @@ export const fellowshipCards = [
       middleContent: (
         <div className="grid grid-cols-2 gap-x-[28px] gap-y-4 mt-[29px] justify-center">
           {workshops.map((w) => (
-            <div className="w-full max-w-[174px]">
+            <div key={w.week} className="w-full max-w-[174px]">
               <WorkshopBox {...w} />
             </div>
           ))}
@@ -69,14 +87,15 @@ export const fellowshipCards = [
         "Build a product in a team of four, with expert guidance from an industry mentor focused on your team’s success. No coding skills required.",
       buttonText: "View Our Past Projects",
       middleContent: (
-        <div
-        className="w-[376px] h-[156px] flex-shrink-0 rounded-[16px] bg-[#FDF9FF] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)]"
-      >
-        {/* temp - change inside here */}
-        <div className="w-full h-full flex items-center justify-center text-black font-medium">
-          Capstone Preview Box
+        <div className="w-[376px] h-[156px] flex-shrink-0 overflow-hidden">
+          <Image
+            src="/images/FellowshipCards/capstone-preview.png"
+            alt="Capstone preview"
+            width={376}
+            height={156}
+            className="object-cover w-full h-full"
+          />
         </div>
-      </div>
       ),
     },
   },
