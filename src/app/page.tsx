@@ -33,30 +33,30 @@ export default function Page() {
           className="hidden sm:block absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
 
-        <div className="w-full px-12 sm:px-10 md:px-16 lg:px-[7.5rem] absolute top-[195px] sm:top-auto sm:bottom-[9rem] z-10">
+        <div className="w-full px-12 sm:px-10 md:px-16 lg:px-[7.5rem] absolute top-[195px] sm:top-auto sm:bottom-[9rem] z-10 space-y-6">
           <WordCarousel />
-        </div>
 
-        {/* mobile version */}
-        {/* <div className="flex flex-col items-center gap-6 lg:hidden">
-          <div className="w-full rounded-xl overflow-hidden">
-            <Image
-              src="/images/WhoWeAre/capstone-pres.png"
-              alt="capstone presentation"
-              width={600}
-              height={300}
-              className="w-full h-auto object-cover"
-            />
+          {/* mobile version - who we are */}
+          <div className="flex flex-col items-center gap-6 lg:hidden">
+            <div className="w-full rounded-xl overflow-hidden">
+              <Image
+                src="/images/WhoWeAre/capstone-pres.png"
+                alt="capstone presentation"
+                width={600}
+                height={300}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="w-full text-left">
+              <h3 className="text-[1.5rem] font-bold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
+                Who We Are
+              </h3>
+              <p className="text-base font-medium leading-snug">
+                We’re a national community of students with a mission to become the world’s next generation of product leaders.
+              </p>
+            </div>
           </div>
-          <div className="w-full text-left space-y-3">
-            <h3 className="text-[1.5rem] font-bold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
-              Who We Are
-            </h3>
-            <p className="text-base font-medium leading-snug">
-              We’re a national community of students with a mission to become the world’s next generation of product leaders.
-            </p>
-          </div>
-        </div> */}
+        </div>
       </section>
 
       {/* what is product – own full screen */}
