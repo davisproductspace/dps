@@ -5,9 +5,7 @@ import { useRef } from "react";
 import { TextReveal } from "@/components/landing/TextReveal";
 import WordCarousel from "@/components/landing/WordCarousel";
 import WhoWeAre from "@/components/landing/WhoWeAre";
-import ScrollBar from "@/components/landing/ScrollBar";
-import FellowshipReveal from "@/components/landing/FellowshipReveal";
-import { fellowshipCards } from "@/data/fellowship-cards";
+import MeetTheFellowship from "@/components/landing/MeetTheFellowship";
 import MentorProfile from "@/components/landing/MentorProfile";
 import { mentors } from "@/data/mentors";
 
@@ -80,43 +78,12 @@ export default function Page() {
       </section>
 
       {/* who we are – skip rendering on mobile */}
-      <section className="w-full hidden lg:block w-full px-[7.5rem]">
+      <section className="w-full hidden lg:block w-full">
         <WhoWeAre />
       </section>
 
       {/* meet the fellowship */}
-      <section
-        ref={fellowshipScrollRef}
-        className="relative h-[300vh] w-full px-6 sm:px-10 md:px-16 lg:px-[7.5rem]"
-      >
-        <div className="sticky top-0 h-screen flex flex-col lg:flex-row items-center justify-between gap-8">
-          {/* left text content */}
-          <div className="max-w-xl space-y-4 text-center lg:text-left">
-            <p className="text-base font-semibold font-sans">
-              What We Offer
-            </p>
-            <h2 className="text-4xl sm:text-5xl font-semibold font-sans leading-tight">
-              Meet the <br />
-              <span className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
-                Fellowship.
-              </span>
-            </h2>
-            <p className="text-base font-sans leading-tight mx-auto lg:mx-0 max-w-md">
-              An immersive eight-week program in which you learn product management by doing product management.
-            </p>
-
-            <button className="bg-[#FDFAFF] shadow-md text-sm bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-medium px-5 py-2 rounded-md mt-4">
-              Join the Pack
-            </button>
-          </div>
-
-          {/* fellowship cards */}
-          <div className="flex items-center gap-6">
-            <FellowshipReveal targetRef={fellowshipScrollRef} cards={fellowshipCards} />
-            <ScrollBar targetRef={sectionRef} />
-          </div>
-        </div>
-      </section>
+      <MeetTheFellowship />
 
       {/* mentors section */}
       <section className="w-full px-6 sm:px-10 md:px-16 lg:px-[7.5rem] flex flex-col gap-8 mb-40">

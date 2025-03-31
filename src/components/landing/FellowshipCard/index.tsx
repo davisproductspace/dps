@@ -24,7 +24,7 @@ export default function CardSection({
     return (
       <motion.div
         {...motionProps}
-        className="bg-[#F7EDFF] text-[#3a3a3a] rounded-2xl pt-[28px] px-[36px] pb-[36px] h-[500px] w-[448px] flex-shrink-0"
+        className="scale-[0.85] sm:scale-100 bg-[#F7EDFF] text-[#3a3a3a] rounded-2xl pt-[28px] px-[36px] pb-[36px] h-[500px] w-[448px] flex-shrink-0"
       >
         {/* title */}
         <h3 className="text-[2rem] font-semibold font-sans leading-none bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent mb-[2rem]">
