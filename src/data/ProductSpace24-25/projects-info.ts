@@ -1,7 +1,4 @@
-import { AnimatedProjects } from "@/components/AboutPage/Projects/animated-projects"
-
-export default function AnimatedProjectsInfo() {
-  const projects = [
+export const projects = [
     {
       quote:
         "After interviewing Instagram users to discover feature gaps, Team Scraps uncovered a common theme: users felt like their profiles did not reflect their true personalities.",
@@ -37,7 +34,4 @@ export default function AnimatedProjectsInfo() {
       designation: "Alex Sunga, Divleen Lota, Gayatri Brijesh, Phuong Thy Nguyen",
       src: "/images/Projects/Preview.png",
     },
-  ]
-  return <AnimatedProjects projects={projects} />
-}
-
+]

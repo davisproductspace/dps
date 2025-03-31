@@ -5,7 +5,7 @@ import FellowshipReveal from "@/components/landing/FellowshipReveal";
 import ScrollBar from "@/components/landing/ScrollBar";
 import FellowshipCard from "@/components/landing/FellowshipCard";
 import { fellowshipCards } from "@/data/fellowship-cards";
-import ArrowButton from "@/components/landing/ArrowButton";
+import ArrowButton from "@/components/ArrowButton";
 import ArrowLeftIcon from "@/assets/icons/left-arrow.svg";
 import ArrowRightIcon from "@/assets/icons/right-arrow.svg";
 import Link from "next/link";
