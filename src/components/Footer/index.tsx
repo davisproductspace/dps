@@ -12,48 +12,62 @@ const navLinks = [
 ];
 
 export default function Footer() {
-    const pathname = usePathname();
-    
-    return (
-        <footer className="w-full flex items-center justify-between py-4 pl-[7.5rem] pr-[7.5rem] mt-8 mb-8 bg-transparent text-gray-800 absolute bottom-0 left-0 z-50">
-            {/* social icons on left */}
-            <div className="flex items-center gap-[0.75rem] text-[18px]">
-                <a href="mailto:davisproductspace@email.com" aria-label="Email">
-                    <MailIcon className="w-7 h-7" />
-                </a>
-                <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram">
-                    <InstagramIcon className="w-7 h-7" />
-                </a>
-                <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn">
-                    <LinkedInIcon className="w-7 h-7 text-[#3A3A3A] relative -ml-[4px] -mt-[2px]" />
-                </a>
-            </div>
+  const pathname = usePathname();
 
-            {/* nav links centered */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-10 text-[18px]">
-                {navLinks.map(({ name, href }) => {
-                const isActive = pathname === href;
+  return (
+    <footer className="w-full absolute bottom-0 left-0 z-50 bg-transparent text-gray-800">
+      {/* Desktop layout */}
+      <div className="hidden md:flex items-center justify-between py-4 pl-[7.5rem] pr-[7.5rem] mt-8 mb-8">
+        {/* Social icons on left */}
+        <div className="flex items-center gap-[0.75rem] text-[18px]">
+          <a href="mailto:davisproductspace@email.com" aria-label="Email">
+            <MailIcon className="w-7 h-7" />
+          </a>
+          <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram">
+            <InstagramIcon className="w-7 h-7" />
+          </a>
+          <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn">
+            <LinkedInIcon className="w-7 h-7 text-[#3A3A3A] relative -ml-[4px] -mt-[2px]" />
+          </a>
+        </div>
 
-                return (
-                    <Link
-                    key={name}
-                    href={href}
-                    className="group relative transition-all"
-                    >
-                    <span
-                        className={`transition-all ${
-                        isActive ? "font-bold" : "group-hover:font-bold"
-                        }`}
-                    >
-                        {name}
-                    </span>
-                    {isActive && (
-                        <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-full h-[2px] bg-gray-800 transition-all duration-300"></span>
-                    )}
-                    </Link>
-                );
-                })}
-            </div>
-        </footer>
+        {/* Nav links centered */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-10 text-[18px]">
+          {navLinks.map(({ name, href }) => {
+            const isActive = pathname === href;
+
+            return (
+              <Link
+                key={name}
+                href={href}
+                className="group relative transition-all"
+              >
+                <span
+                  className={`transition-all ${isActive ? "font-bold" : "group-hover:font-bold"}`}
+                >
+                  {name}
+                </span>
+                {isActive && (
+                  <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-full h-[2px] bg-gray-800 transition-all duration-300"></span>
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Mobile layout */}
+      <div className="flex md:hidden justify-center items-center gap-6 py-6">
+        <a href="mailto:davisproductspace@email.com" aria-label="Email">
+          <MailIcon className="w-6 h-6" />
+        </a>
+        <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram">
+          <InstagramIcon className="w-6 h-6" />
+        </a>
+        <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn">
+          <LinkedInIcon className="w-6 h-6 text-[#3A3A3A]" />
+        </a>
+      </div>
+    </footer>
   );
 }

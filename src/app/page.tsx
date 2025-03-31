@@ -47,10 +47,10 @@ export default function Page() {
               />
             </div>
             <div className="w-full text-left">
-              <h3 className="text-[1.5rem] font-bold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
+              <h3 className="text-[1rem] font-bold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
                 Who We Are
               </h3>
-              <p className="text-base font-medium leading-snug">
+              <p className="text-[12px] font-medium leading-snug">
                 We’re a national community of students with a mission to become the world’s next generation of product leaders.
               </p>
             </div>

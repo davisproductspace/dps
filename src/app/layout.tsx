@@ -30,14 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="bg-[#FDFAFF] text-[#3A3A3A] font-sans overflow-x-hidden">
-        <div className="hidden sm:block">
           <Navbar />
-        </div>
         <main className="min-h-screen relative flex flex-col">
           <div className="flex-grow">{children}</div>
-        <div className="hidden sm:block">
           <Footer />
-        </div>
         </main>
       </body>
     </html>
