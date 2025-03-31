@@ -1,11 +1,13 @@
 "use client";
+
 import Logo from "@/assets/logo/ps-logo.svg";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Apply", href: "/apply" },
+  { name: "Apply", href: "https://airtable.com/app9URmfQlcVa2te1/pag1EiBrWOyZVvvnw/form" },
 ];
 
 export default function Navbar() {
@@ -20,28 +22,34 @@ export default function Navbar() {
 
       {/* centered nav links */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex space-x-10 text-[18px] text-gray-800">
-        {navLinks.map(({ name, href }) => {
-          const isActive = pathname === href;
+      {navLinks.map(({ name, href }) => {
+      const isActive = pathname === href;
 
-          return (
-            <a
-              key={name}
-              href={href}
-              className="group relative transition-all"
-            >
-              <span
-                className={`transition-all ${
-                  isActive ? "font-bold" : "group-hover:font-bold"
-                }`}
-              >
-                {name}
-              </span>
-              {isActive && (
-                <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-full h-[2px] bg-gray-800 transition-all duration-300"></span>
-              )}
-            </a>
-          );
-        })}
+      const baseClass = `group relative transition-all`;
+
+      return href.startsWith("http") ? (
+        <a
+          key={name}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={baseClass}
+        >
+          <span className={`${isActive ? "font-bold" : "group-hover:font-bold"} transition-all`}>
+            {name}
+          </span>
+        </a>
+      ) : (
+        <Link key={name} href={href} className={baseClass}>
+          <span className={`${isActive ? "font-bold" : "group-hover:font-bold"} transition-all`}>
+            {name}
+          </span>
+          {isActive && (
+            <span className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-full h-[2px] bg-gray-800 transition-all duration-300" />
+          )}
+        </Link>
+      );
+    })}
       </div>
     </nav>
   );
