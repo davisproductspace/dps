@@ -22,14 +22,18 @@ export default function MeetTheFellowship() {
       <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* left text content */}
         <div className="max-w-xl space-y-4 lg:text-left">
-          <p className="text-base font-semibold font-sans">What We Offer</p>
-          <h2 className="text-4xl sm:text-5xl font-semibold font-sans leading-tight">
+          <p className="text-[12px] lg:text-[16px] font-semibold font-sans">
+            What We Offer
+          </p>
+
+          <h2 className="text-[32px] lg:text-[56px] font-semibold font-sans leading-tight">
             Meet the <br />
             <span className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
               Fellowship.
             </span>
           </h2>
-          <p className="text-base font-sans leading-tight mx-auto lg:mx-0 max-w-md">
+
+          <p className="text-[12px] lg:text-[16px] font-sans leading-tight mx-auto lg:mx-0 max-w-md">
             An immersive eight-week program in which you learn product management by doing product management.
           </p>
 
