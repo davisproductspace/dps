@@ -103,34 +103,34 @@ export const AnimatedProjects = ({
         </div>
 
         {/* Text content */}
-        <div className="flex flex-col justify-between py-4 pl-6 md:pl-12">
-          <motion.div
-            className="self-end"
-            key={active}
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-          >
-            <h3 className="text-[36px] font-medium text-[#3A3A3A] font-inter leading-normal">
-              {projects[active].name}
-            </h3>
-            <div className="w-[488px] min-h-[15px] max-w-full">
-              <p className="text-[12px] font-medium text-[#3A3A3A] font-['Inter'] leading-[15px]">
-                {projects[active].designation}
-              </p>
-            </div>
-            <div className="mt-8 space-y-[40px] w-[488px] max-w-full">
-              <motion.p className="text-[14px] font-medium text-[#3A3A3A] font-['Inter'] leading-[23px]">
-                {renderAnimatedText(projects[active].quote)}
-              </motion.p>
-              {projects[active].secondQuote && (
-                <motion.p className="text-[14px] font-medium text-[#3A3A3A] font-['Inter'] leading-[23px]">
-                  {renderAnimatedText(projects[active].secondQuote)}
-                </motion.p>
-              )}
-            </div>
-          </motion.div>
+        <div className="flex flex-col justify-between py-4 pl-0 md:pl-12 items-center text-center md:items-start md:text-left w-full">
+  <motion.div
+    className="w-full md:w-auto"
+    key={active}
+    initial={{ y: 20, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    exit={{ y: -20, opacity: 0 }}
+    transition={{ duration: 0.2, ease: "easeInOut" }}
+  >
+    <h3 className="text-[24px] sm:text-[28px] md:text-[36px] font-medium text-[#3A3A3A] font-inter leading-normal">
+      {projects[active].name}
+    </h3>
+    <div className="w-full md:w-[488px] min-h-[15px] max-w-full md:max-w-none mx-auto md:mx-0">
+      <p className="text-[12px] font-medium text-[#3A3A3A] font-['Inter'] leading-[15px]">
+        {projects[active].designation}
+      </p>
+    </div>
+    <div className="mt-8 space-y-8 w-full md:w-[488px] max-w-full md:max-w-none mx-auto md:mx-0">
+      <motion.p className="text-[14px] font-medium text-[#3A3A3A] font-['Inter'] leading-[23px]">
+        {renderAnimatedText(projects[active].quote)}
+      </motion.p>
+      {projects[active].secondQuote && (
+        <motion.p className="text-[14px] font-medium text-[#3A3A3A] font-['Inter'] leading-[23px]">
+          {renderAnimatedText(projects[active].secondQuote)}
+        </motion.p>
+      )}
+    </div>
+  </motion.div>
 
           {/* Navigation Buttons */}
           <div className="flex gap-4 pt-[23px]">

@@ -141,7 +141,7 @@ export function ImageMarqueeDemo() {
   }
 
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden gap-6">
+    <div className="relative flex w-full flex-col justify-center overflow-hidden gap-6 px-0 md:px-12">
       <Marquee pauseOnHover speed={15} className="py-2">
         {reorderImages(firstRowImages).map((image) => (
           <MarqueeImage key={image.id} image={image} />
@@ -152,8 +152,8 @@ export function ImageMarqueeDemo() {
           <MarqueeImage key={image.id} image={image} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/12 md:w-1/4 bg-gradient-to-r from-background"></div>
+    <div className="pointer-events-none absolute inset-y-0 right-0 w-1/12 md:w-1/4 bg-gradient-to-l from-background"></div>
     </div>
   )
 }
