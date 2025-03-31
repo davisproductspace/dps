@@ -55,52 +55,52 @@ export const AnimatedProjects = ({
 
   return (
     <div className="px-4 py-20 font-sans antialiased md:px-8 lg:px-12">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[520px_auto] gap-y-20 gap-x-[75px] w-full max-w-[1200px] mx-auto items-start">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[520px_auto] gap-y-20 gap-x-[120px] w-full max-w-[1200px] mx-auto items-start">
         {/* Image section */}
         <div className="flex justify-center pr-6">
-  <div className="relative w-full max-w-[640px] h-[338px] rounded-[40px] overflow-hidden z-0 bg-white">
-    <AnimatePresence mode="wait">
-      {projects.map((project, index) =>
-        isActive(index) ? (
-          <motion.div
-            key={project.src}
-            initial={{
-              opacity: 0,
-              scale: 0.9,
-              z: -100,
-              rotate: randomRotateY(),
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              z: 0,
-              rotate: 0,
-              zIndex: 40,
-              y: [0, -80, 0],
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.9,
-              z: 100,
-              rotate: randomRotateY(),
-            }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="absolute inset-0 rounded-[40px] overflow-hidden"
-          >
-            <Image
-              src={project.src || "/placeholder.svg"}
-              alt={project.name}
-              fill
-              draggable={false}
-              className="object-cover object-center rounded-[40px] w-full h-full"
-            />
-          </motion.div>
-        ) : null
-      )}
-    </AnimatePresence>
-  </div>
-</div>
-
+          <div className="relative w-full max-w-[640px] rounded-[40px] overflow-hidden z-0 bg-white">
+            <AnimatePresence mode="wait">
+              {projects.map((project, index) =>
+                isActive(index) ? (
+                  <motion.div
+                    key={project.src}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.9,
+                      z: -100,
+                      rotate: randomRotateY(),
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      z: 0,
+                      rotate: 0,
+                      zIndex: 40,
+                      y: [0, -80, 0],
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0.9,
+                      z: 100,
+                      rotate: randomRotateY(),
+                    }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="relative w-full h-auto rounded-[40px] overflow-hidden"
+                  >
+                    <Image
+                      src={project.src || "/placeholder.svg"}
+                      alt={project.name}
+                      width={640}
+                      height={400}
+                      draggable={false}
+                      className="w-full h-auto object-contain rounded-[40px]"
+                    />
+                  </motion.div>
+                ) : null
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
 
         {/* Text content */}
         <div className="flex flex-col justify-between py-4 pl-6 md:pl-12">
