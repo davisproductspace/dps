@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+
 
 const events = [
   {
@@ -51,77 +52,94 @@ const events = [
 ];
 
 export default function EventSchedule() {
-  return (
-    <div className="min-h-screen flex justify-center items-center py-12">
-      <div className="w-full px-[120px]">
-        <h2 className="text-3xl font-semibold text-left text-[#3a3a3a] mb-8">
-          Spring 2025 Fellowship Recruitment
-        </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-20">
-          {events.map((event, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-start relative"
-            >
-              <div className="flex flex-col items-start text-left w-full">
-                {/* Left-aligned Date */}
-                <span
-                  className="text-[#7F7F7F] text-sm font-normal"
-                  style={{
-                    fontFamily: "Inter",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "28px", // 200% line-height
-                  }}
-                >
-                  {event.date}
-                </span>
+    const [showMore, setShowMore] = useState(false);
 
-                {/* Left-aligned Heading with gradient text */}
-                <h3
-                  className="text-transparent bg-clip-text"
-                  style={{
-                    background: "linear-gradient(90deg, #E06287 0%, #765DF2 100%)",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    fontFamily: "Inter",
-                    fontSize: "18px",
-                    fontStyle: "normal",
-                    fontWeight: "500",
-                    lineHeight: "28px",
-                  }}
-                >
-                  {event.title}
-                </h3>
+    // Show all events if "See More" is clicked
+    const visibleEvents = showMore ? events : events.slice(0, 4); // show only first 4 events initially
 
-                {/* Left-aligned Description with specified styling */}
-                <p
-                  className="text-[#000] text-sm mt-2"
-                  style={{
-                    fontFamily: "Inter",
-                    fontSize: "14px",
-                    fontStyle: "normal",
-                    fontWeight: "400",
-                    lineHeight: "23px", // 164.286% line-height
-                  }}
+
+
+    return (
+      <div className="min-h-screen flex justify-center items-center py-12">
+        <div className="w-full px-12 lg:px-[120px]">
+          <h2 className="text-3xl font-semibold text-left text-[#3a3a3a] mb-8">
+            Spring 2025 Recruitment
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            {events.map((event, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-start relative"
+              >
+                <div className="flex flex-col items-start text-left w-full">
+                  {/* Left-aligned Date */}
+                  <span
+                    className="text-[#7F7F7F] text-sm font-normal"
+                    style={{
+                      fontFamily: "Inter",
+                      fontSize: "14px",
+                      fontStyle: "normal",
+                      fontWeight: "400",
+                      lineHeight: "28px", // 200% line-height
+                    }}
+                  >
+                    {event.date}
+                  </span>
+  
+                  {/* Left-aligned Heading with gradient text */}
+                  <h3
+                    className="text-transparent bg-clip-text"
+                    style={{
+                      background: "linear-gradient(90deg, #E06287 0%, #765DF2 100%)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      fontFamily: "Inter",
+                      fontSize: "18px",
+                      fontStyle: "normal",
+                      fontWeight: "500",
+                      lineHeight: "28px",
+                    }}
+                  >
+                    {event.title}
+                  </h3>
+  
+                  {/* Left-aligned Description with specified styling */}
+                  <p
+                    className="text-[#000] text-sm mt-2"
+                    style={{
+                      fontFamily: "Inter",
+                      fontSize: "14px",
+                      fontStyle: "normal",
+                      fontWeight: "400",
+                      lineHeight: "23px", // 164.286% line-height
+                    }}
+                  >
+                    {event.description.includes('*') ? (
+                      <>
+                        {event.description.split('*')[0]}
+                        <br />
+                        <span>{`*${event.description.split('*')[1]}`}</span>
+                      </>
+                    ) : (
+                      event.description
+                    )}
+                  </p>
+                </div>
+
+                {/* "See More" button */}
+                {!showMore && (
+                <button
+                    onClick={() => setShowMore(true)}
+                    className="text-[#765DF2] text-sm font-medium mt-4"
                 >
-                  {event.description.includes('*') ? (
-                    <>
-                    {event.description.split('*')[0]}
-                    <br />
-                    <span>{`*${event.description.split('*')[1]}`}</span>
-                    </>
-                ) : (
-                    event.description
+                    See More
+                </button>
                 )}
-                </p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
+    );
+  }
