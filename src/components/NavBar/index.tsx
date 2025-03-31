@@ -22,7 +22,7 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <nav className="fixed md:absolute top-0 left-0 w-full z-50 bg-transparent">
       <div className="flex items-center justify-between px-6 sm:px-[7.5rem]">
         {/* Logo (only on desktop) */}
         <div className="hidden md:block py-12">
