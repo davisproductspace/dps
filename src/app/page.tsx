@@ -91,11 +91,13 @@ export default function Page() {
       {/* mentors section */}
       <section className="w-full px-[48px] sm:px-10 md:px-16 lg:px-[7.5rem] flex flex-col gap-8 mb-40">
         <div className="text-left max-w-3xl space-y-4">
-          <p className="text-base font-medium">That’s right! Our Fellowship is...</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent leading-tight">
+          <p className="text-[12px] sm:text-base font-medium">
+            That’s right! Our Fellowship is...
+          </p>
+          <h2 className="text-[27px] sm:text-4xl font-semibold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent leading-tight">
             Entirely Industry-Led.
           </h2>
-          <p className="text-base font-medium">
+          <p className="text-[12px] sm:text-base font-medium">
             Our workshop leaders and Capstone mentors are from the world’s top technology companies.
           </p>
         </div>
