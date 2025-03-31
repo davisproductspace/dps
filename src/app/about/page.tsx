@@ -17,6 +17,7 @@ import CurateProfile from "@/components/AboutPage/Profiles/curateTeam";
 import PreviewProfile from "@/components/AboutPage/Profiles/previewTeam";
 import ScrapsProfile from "@/components/AboutPage/Profiles/scrapsTeam";
 import SyncProfile from "@/components/AboutPage/Profiles/syncTeam";
+import StatsCard from "@/components/AboutPage/StatsCard";
 
 export default function Page() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -36,74 +37,35 @@ export default function Page() {
 
       {/* space page context to horiz padding 120px each side*/}
       <div className="w-full px-4 sm:px-[7.5rem]">
-
-
-        {/* Fellows/Board section */}
-        <section className="flex flex-col justify-between mb-[60px] md:mb-[160px]">
-          <div className="flex flex-col items-start">
+        {/* stats section */}
+        <section className="flex flex-col items-start">
             <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal">
               Nationwide, Product Space is home to...
             </p>
-
             <div className="flex flex-col sm:flex-row sm:space-x-[60px] mt-[16px] space-y-[32px] sm:space-y-0 w-full">
-              <div className="flex flex-col items-start">
-                <h1 className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent text-[64px] font-semibold leading-normal">
-                  15+
-                </h1>
-                <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mt-[8px]">
-                  Chapters
-                </p>
-              </div>
-
-              <div className="flex flex-col items-start">
-                <h1 className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-inter text-[64px] font-semibold leading-normal">
-                  500+
-                </h1>
-                <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mt-[8px]">
-                  Students
-                </p>
-              </div>
-
-              <div className="flex flex-col items-start">
-                <h1 className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-inter text-[64px] font-semibold leading-normal">
-                  1000+
-                </h1>
-                <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mt-[8px]">
-                  Alumni
-                </p>
-              </div>
+              <StatsCard value="15+" label="Chapters" />
+              <StatsCard value="500+" label="Students" />
+              <StatsCard value="1000+" label="Alumni" />
             </div>
-          </div>
+        </section>
 
-
-          {/* text content */}
+        {/* leadership */}
+        <section>
           <div className="text-left max-w-3xl space-y-4 mt-[144px]">
-          <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-semibold mb-8 whitespace-nowrap text-left w-full">
-            Meet the Davis Squad!
-          </h2>
+            <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-semibold mb-8 whitespace-nowrap text-left w-full">
+              Meet the Davis Squad!
+            </h2>
             <p className="text-lg font-medium mb-8">
               Leadership
             </p>
           </div>
-             {/* Board section */}
-             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
+          
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
             {board.map((board, i) => (
               <BoardProfile key={i} {...board} />
             ))}
           </div>
-            {/* Directors section */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full mt-10">
-                {directors.map((directors, i) => (
-                <DirectorProfile key={i} {...directors} />
-                ))}
-            </div>
-                {/* Advisors section */}
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full mt-10 items-start">
-                {advisors.map((advisors, i) => (
-                <AdvisorProfile key={i} {...advisors} />
-                ))}
-            </div>
-          </section>
+        </section>
 
           <section className="flex flex-col justify-between mb-[160px] mt-[80px]">
 
