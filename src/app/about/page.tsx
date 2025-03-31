@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { TextReveal } from "@/components/landing/TextReveal";
 import WordCarousel from "@/components/landing/WordCarousel";
+import  {ImageMarqueeDemo}  from "@/components/AboutPage/Marquee/image-marquee";
+import AnimatedProjectsInfo from "@/components/AboutPage/Projects/animated-projects-info";
 import WhoWeAre from "@/components/landing/WhoWeAre";
 import ScrollBar from "@/components/landing/ScrollBar";
 import FellowshipReveal from "@/components/landing/FellowshipReveal";
@@ -30,11 +32,11 @@ export default function Page() {
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
       {/* hero section */}
       <section className="min-h-screen relative w-full overflow-hidden">
-        <img src="/images/hero-logos.svg" alt="stacked logos background"
+        <img src="/images/about-page.svg" alt="stacked logos background"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
         <div className="w-full px-[7.5rem] absolute bottom-[9rem] z-10">
-          <WordCarousel />
+          < ImageMarqueeDemo/>
         </div>
       </section>
 
@@ -183,7 +185,9 @@ export default function Page() {
               <CurateProfile key={i} {...curateTeam} />
             ))}
           </div>
-
+          <div>
+            <AnimatedProjectsInfo />
+          </div>
         </section>
       </div>
     </main>
