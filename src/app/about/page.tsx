@@ -42,26 +42,6 @@ export default function Page() {
 
       {/* space page context to horiz padding 120px each side*/}
       <div className="w-full px-[7.5rem]">
-        {/* what is product */}
-        <section className="min-h-screen">
-          {/* call scrolling text animation with content */}
-          <TextReveal
-            heading={
-              <h2 className="text-[2.75rem] font-semibold leading-none bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
-                What Is Product?
-              </h2>
-            }
-            content={[
-              "A product manager is the CEO of a product. They communicate with customers to understand their needs, come up with solutions that address them, and collaborate with designers, engineers, and marketers to transform those ideas into",
-              <span
-                key="highlight"
-                className="bg-gradient-to-l from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-semibold"
-              >
-                products that people love.
-              </span>,
-            ]}
-          />
-        </section>
 
     
 
