@@ -136,13 +136,13 @@ export default function EventSchedule() {
         </div>
 
         {/* See More button (only on mobile and when not expanded) */}
-        {isMobile && !showMore && (
+        {isMobile && (
           <div className="mt-6 text-center">
             <button
-              onClick={() => setShowMore(true)}
+              onClick={() => setShowMore((prev) => !prev)}
               className="text-[#765DF2] text-sm font-medium"
             >
-              See More
+              {showMore ? "See Less" : "See More"}
             </button>
           </div>
         )}
