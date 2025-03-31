@@ -6,7 +6,6 @@ export const board = [
       backImageSrc: "images/Funny/Board/Akash.png",
       linkedinLink: "https://www.linkedin.com/in/yournextintern/",
       coffeechatLink: "https://calendly.com/akanand-ucdavis/30min",
-      backImageSrc: "",
     },
     {
       name: "Raquib Alam",
@@ -31,6 +30,5 @@ export const board = [
       backImageSrc: "images/Funny/Board/Erin.png",
       linkedinLink: "https://www.linkedin.com/in/erinkimong/",
       coffeechatLink: "https://calendly.com/erkong/erin-ong-ps-coffee-chat",
-      backImageSrc: "",
     },
 ];
