@@ -79,7 +79,6 @@ export default function AdvisorCard({
             rel="noopener noreferrer"
             aria-label="LinkedIn"
             >
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
           <LinkedInIcon className="w-[24px] h-[24.4px] text-[#3A3A3A] relative pl-[4px]" />
         </a>
       </div>
@@ -93,7 +92,6 @@ export default function AdvisorCard({
             rel="noopener noreferrer"
             aria-label="Coffee"
             >
-        <a href="#" target="_blank" aria-label="Coffee">
           <CoffeeIcon className="w-[24.3px] h-[24.8px] text-[#3A3A3A] relative pl-[4px]" />
         </a>
       </div>
