@@ -6,6 +6,8 @@ interface PreviewCardProps {
   backImageSrc?: string; // New prop for the back image
   name: string;
   title: string;
+  linkedinLink?: string;
+  coffeechatLink?: string;
 }
 
 export default function PreviewCard({
@@ -13,6 +15,8 @@ export default function PreviewCard({
   backImageSrc,
   name,
   title,
+  linkedinLink,
+  coffeechatLink,
 }: PreviewCardProps) {
   return (
     <div className="flex flex-col items-start text-left w-[215px]">
@@ -69,6 +73,12 @@ export default function PreviewCard({
         <p className="text-[18px] font-medium text-[#3A3A3A] mr-auto">
           {name}
         </p>
+        <a
+            href={linkedinLink || "https://linkedin.com"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            >
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
           <LinkedInIcon className="w-[24px] h-[24.4px] text-[#3A3A3A] relative pl-[4px]" />
         </a>
@@ -77,6 +87,12 @@ export default function PreviewCard({
         <p className="text-[14px] font-normal mt-1 text-[#3A3A3A] leading-[30px]">
           {title}
         </p>
+        <a
+            href={coffeechatLink || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Coffee"
+            >
         <a href="#" target="_blank" aria-label="Coffee">
           <CoffeeIcon className="w-[24.3px] h-[24.8px] text-[#3A3A3A] relative pl-[4px]" />
         </a>
