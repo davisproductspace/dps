@@ -89,7 +89,7 @@ export default function Page() {
       <MeetTheFellowship />
 
       {/* mentors section */}
-      <section className="w-full px-6 sm:px-10 md:px-16 lg:px-[7.5rem] flex flex-col gap-8 mb-40">
+      <section className="w-full px-[48px] sm:px-10 md:px-16 lg:px-[7.5rem] flex flex-col gap-8 mb-40">
         <div className="text-left max-w-3xl space-y-4">
           <p className="text-base font-medium">That’s right! Our Fellowship is...</p>
           <h2 className="text-3xl sm:text-4xl font-semibold bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent leading-tight">
@@ -100,7 +100,7 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
           {mentors.map((mentor, i) => (
             <MentorProfile key={i} {...mentor} />
           ))}

@@ -4,7 +4,7 @@ interface MentorCardProps {
   title: string;
   company: string;
   logo?: React.ReactNode;
-  backImageSrc?: string; // optional flip-side image
+  backImageSrc?: string;
 }
 
 export default function MentorCard({
@@ -16,10 +16,10 @@ export default function MentorCard({
   logo,
 }: MentorCardProps) {
   return (
-    <div className="flex flex-col items-start text-left w-[215px]">
+    <div className="flex flex-col items-start text-left w-[140px] sm:w-[215px]">
       {/* Flipping Card Container */}
       <div
-        className="relative w-[215px] h-[215px] mb-3 group"
+        className="relative w-[140px] sm:w-[215px] h-[140px] sm:h-[215px] mb-2 group"
         style={{ perspective: "1000px" }}
       >
         <div
@@ -27,10 +27,7 @@ export default function MentorCard({
           style={{ transformStyle: "preserve-3d" }}
         >
           {/* Front Side */}
-          <div
-            className="absolute inset-0"
-            style={{ backfaceVisibility: "hidden" }}
-          >
+          <div className="absolute inset-0" style={{ backfaceVisibility: "hidden" }}>
             {imageSrc ? (
               <img
                 src={imageSrc}
@@ -64,8 +61,8 @@ export default function MentorCard({
       </div>
 
       {/* Name + Title */}
-      <p className="text-[20px] font-semibold">{name}</p>
-      <p className="text-[14px] font-normal mt-1">
+      <p className="text-[14px] sm:text-[20px] font-semibold">{name}</p>
+      <p className="text-[11px] sm:text-[14px] font-normal mt-1">
         {title} @ <span className="font-semibold">{company}</span> {logo}
       </p>
     </div>

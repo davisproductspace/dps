@@ -17,7 +17,7 @@ export default function MeetTheFellowship() {
   return (
     <section
       ref={fellowshipScrollRef}
-      className="relative h-auto lg:h-[300vh] w-full px-[48px] lg:px-[7.5rem] py-20 lg:py-0"
+      className="relative h-auto lg:h-[300vh] w-full px-[48px] lg:px-[7.5rem] py-12 lg:py-0"
     >
       <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col lg:flex-row items-center justify-between gap-8">
         {/* left text content */}
@@ -40,7 +40,7 @@ export default function MeetTheFellowship() {
         </div>
 
         {/* fellowship cards */}
-        <div className="flex flex-col items-center gap-1.5 mt-2">
+        <div className="flex flex-col items-center gap-0.5 mt-2">
 
           {/* desktop version */}
           <div className="hidden lg:flex items-center gap-2">

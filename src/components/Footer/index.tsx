@@ -24,7 +24,7 @@ export default function Footer() {
                 <a href="https://instagram.com/davisproductspace" target="_blank" aria-label="Instagram">
                     <InstagramIcon className="w-7 h-7" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/davisproductspace" target="_blank" aria-label="LinkedIn">
                     <LinkedInIcon className="w-7 h-7 text-[#3A3A3A] relative -ml-[4px] -mt-[2px]" />
                 </a>
             </div>
