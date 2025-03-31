@@ -16,7 +16,7 @@ interface MentorCardProps {
     return (
       <div className="flex flex-col items-start text-left">
         {/* headshot or placeholder */}
-        <div className="w-[215px] h-[215px] rounded-xl overflow-hidden bg-gray-300 mb-3">
+        <div className="w-[215px] h-[215px] rounded-xl overflow-hidden mb-3">
           {imageSrc ? (
             <img
               src={imageSrc}

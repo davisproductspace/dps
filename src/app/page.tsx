@@ -8,6 +8,7 @@ import WhoWeAre from "@/components/landing/WhoWeAre";
 import MeetTheFellowship from "@/components/landing/MeetTheFellowship";
 import MentorProfile from "@/components/landing/MentorProfile";
 import { mentors } from "@/data/mentors";
+import ArrowButton from "@/components/landing/ArrowButton"
 
 export default function Page() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -82,7 +83,7 @@ export default function Page() {
         <WhoWeAre />
       </section>
 
-      {/* meet the fellowship */}
+      {/* meet the fellowship section. handles text and scroll animations */}
       <MeetTheFellowship />
 
       {/* mentors section */}
