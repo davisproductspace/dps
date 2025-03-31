@@ -1,14 +1,8 @@
 "use client"
 
 import { useRef } from "react";
-import { TextReveal } from "@/components/landing/TextReveal";
-import WordCarousel from "@/components/landing/WordCarousel";
 import  {ImageMarqueeDemo}  from "@/components/AboutPage/Marquee/image-marquee";
 import AnimatedProjectsInfo from "@/components/AboutPage/Projects/animated-projects-info";
-import WhoWeAre from "@/components/landing/WhoWeAre";
-import ScrollBar from "@/components/landing/ScrollBar";
-import FellowshipReveal from "@/components/landing/FellowshipReveal";
-import { fellowshipCards } from "@/data/fellowship-cards";
 import { board } from "@/data/ProductSpace24-25/board";
 import { directors } from "@/data/ProductSpace24-25/directors";
 import { advisors } from "@/data/ProductSpace24-25/advisors";
@@ -164,7 +158,7 @@ export default function Page() {
             ))}
           </div>
           {/* Projects Section */}
-          <div className="text-left max-w-3xl space-y-4 mt-[144px]">
+          <div id="projects" className="text-left max-w-3xl space-y-4 mt-[144px]">
           <p className="text-[#3A3A3A] font-inter text-[16px] font-semibold leading-normal">
           Curious about the Capstone? Check out...
           </p>

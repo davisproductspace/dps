@@ -7,6 +7,22 @@ const finalPhrase = ["Are", "Product Space"];
 export default function WordCarousel() {
   const [index, setIndex] = useState(0);
   const [showFinal, setShowFinal] = useState(false);
+  const [carouselHeight, setCarouselHeight] = useState(3); // default: mobile = 3rem
+
+  useEffect(() => {
+    // Update carousel height based on screen width
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setCarouselHeight(4.5); // desktop: 4.5rem
+      } else {
+        setCarouselHeight(3); // mobile: 3rem
+      }
+    };
+
+    handleResize(); // set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,19 +48,25 @@ export default function WordCarousel() {
       <span className="text-[#3a3a3a]">We</span>
 
       {/* middle word scroll */}
-      <div className="h-[3rem] sm:h-[4.5rem] overflow-hidden">
+      <div
+        className="overflow-hidden"
+        style={{ height: `${carouselHeight}rem` }}
+      >
         <div
           className="transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateY(-${middleIndex * (showFinal ? 3 : 3)}rem)` }} // uses 3rem scroll height for mobile
+          style={{
+            transform: `translateY(-${middleIndex * carouselHeight}rem)`,
+          }}
         >
           {middleWords.map((word, i) => (
             <div
               key={i}
-              className={`h-[3rem] sm:h-[4.5rem] ${
+              style={{ height: `${carouselHeight}rem` }}
+              className={
                 word === "Are"
                   ? "text-[#3a3a3a]"
                   : "bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent"
-              }`}
+              }
             >
               {word}
             </div>
@@ -55,7 +77,7 @@ export default function WordCarousel() {
       {/* bottom row */}
       <div className="flex items-baseline gap-2">
         <span
-          className={`text-[2.5rem] sm:text-[4rem] leading-none transition-colors duration-500 ${
+          className={`transition-colors duration-500 leading-none ${
             showFinal
               ? "bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent"
               : "text-[#3a3a3a]"
@@ -63,9 +85,8 @@ export default function WordCarousel() {
         >
           Product
         </span>
-
         {showFinal && (
-          <span className="text-[2.5rem] sm:text-[4rem] leading-none animate-fade-slide-delayed bg-gradient-to-r from-[#765DF2] to-[#A594FD] bg-clip-text text-transparent">
+          <span className="animate-fade-slide-delayed bg-gradient-to-r from-[#765DF2] to-[#A594FD] bg-clip-text text-transparent leading-none">
             Space.
           </span>
         )}

@@ -86,6 +86,7 @@ export const fellowshipCards = [
       subtext1:
         "Build a product in a team of four, with expert guidance from an industry mentor focused on your team’s success. No coding skills required.",
       buttonText: "View Our Past Projects",
+      buttonLink: "/about#projects",
       middleContent: (
         <div className="w-[376px] h-[156px] flex-shrink-0 overflow-hidden">
           <Image
