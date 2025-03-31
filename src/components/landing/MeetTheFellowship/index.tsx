@@ -8,6 +8,7 @@ import { fellowshipCards } from "@/data/fellowship-cards";
 import ArrowButton from "@/components/landing/ArrowButton";
 import ArrowLeftIcon from "@/assets/icons/left-arrow.svg";
 import ArrowRightIcon from "@/assets/icons/right-arrow.svg";
+import Link from "next/link";
 
 export default function MeetTheFellowship() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -38,9 +39,15 @@ export default function MeetTheFellowship() {
           </p>
 
           {/* desktop-only button */}
-          <button className="hidden lg:inline-block bg-[#FDFAFF] shadow-md text-sm bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-medium px-5 py-2 rounded-md mt-4">
+          <Link
+            href="https://airtable.com/app9URmfQlcVa2te1/pag1EiBrWOyZVvvnw/form"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-block bg-[#FDFAFF] shadow-md text-lg cursor-pointer hover:opacity-90 hover:font-bold transition-all bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-medium px-8 py-3 rounded-md mt-4"
+          >
             Join the Pack
-          </button>
+          </Link>
+
         </div>
 
         {/* fellowship cards */}

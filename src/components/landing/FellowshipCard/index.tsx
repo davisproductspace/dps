@@ -42,8 +42,10 @@ export default function CardSection({
         {/* button */}
         {buttonText && (
           <a href={buttonLink}>
-            <button className="bg-white text-black text-sm px-4 py-2 rounded-lg font-medium">
-              {buttonText}
+            <button className="bg-white shadow-md text-sm cursor-pointer hover:opacity-90 hover:font-bold transition-all font-medium px-4 py-2 rounded-lg">
+              <span className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
+                {buttonText}
+              </span>
             </button>
           </a>
         )}
