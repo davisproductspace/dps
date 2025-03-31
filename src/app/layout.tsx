@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   description: "The future of product leaders",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: "no",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -22,8 +29,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-[#FDFAFF] text-[#3A3A3A] font-sans">
-        <Navbar />
+      <body className="bg-[#FDFAFF] text-[#3A3A3A] font-sans overflow-x-hidden">
+        <div className="hidden sm:block">
+          <Navbar />
+        </div>
         <main className="min-h-screen relative flex flex-col">
           <div className="flex-grow">{children}</div>
           <Footer />

@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 "use client"
 
 import { useRef } from "react";
@@ -187,14 +185,11 @@ export default function Page() {
               <CurateProfile key={i} {...curateTeam} />
             ))}
           </div>
-
           <div>
             <AnimatedProjectsInfo />
           </div>
-
         </section>
       </div>
     </main>
   );
 }
->>>>>>> Stashed changes
