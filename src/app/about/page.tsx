@@ -4,25 +4,15 @@ import { useRef } from "react";
 import  {ImageMarqueeDemo}  from "@/components/AboutPage/Marquee/image-marquee";
 import AnimatedProjectsInfo from "@/components/AboutPage/Projects/animated-projects-info";
 import { board } from "@/data/ProductSpace24-25/board";
-import { directors } from "@/data/ProductSpace24-25/directors";
-import { advisors } from "@/data/ProductSpace24-25/advisors";
 import { previewTeam } from "@/data/ProductSpace24-25/Fellows/TeamPreview";
 import { syncTeam } from "@/data/ProductSpace24-25/Fellows/TeamSync";
 import { curateTeam } from "@/data/ProductSpace24-25/Fellows/TeamCurate";
 import { scrapsTeam } from "@/data/ProductSpace24-25/Fellows/TeamScraps";
-import BoardProfile from "@/components/AboutPage/Profiles/board";
-import DirectorProfile from "@/components/AboutPage/Profiles/directors";
-import AdvisorProfile from "@/components/AboutPage/Profiles/advisors";
-import CurateProfile from "@/components/AboutPage/Profiles/curateTeam";
-import PreviewProfile from "@/components/AboutPage/Profiles/previewTeam";
-import ScrapsProfile from "@/components/AboutPage/Profiles/scrapsTeam";
-import SyncProfile from "@/components/AboutPage/Profiles/syncTeam";
+import FlipProfile from "@/components/AboutPage/FlipProfile";
 import StatsCard from "@/components/AboutPage/StatsCard";
+import ProfileGrid from "@/components/AboutPage/ProfileGrid";
 
 export default function Page() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const fellowshipScrollRef = useRef<HTMLDivElement>(null);
-
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
       {/* hero section */}
@@ -62,63 +52,37 @@ export default function Page() {
           
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full">
             {board.map((board, i) => (
-              <BoardProfile key={i} {...board} />
+              <FlipProfile key={i} {...board} />
             ))}
           </div>
         </section>
 
-          <section className="flex flex-col justify-between mb-[160px] mt-[80px]">
-
-          <div className="text-left max-w-3xl space-y-4">
-            <h2 className="text-[#3A3A3A] font-inter text-[20px] font-medium leading-normal">
-              Fall '24 Fellows
-            </h2>
-            <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mb-8">
-              Team Preview
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full mt-10">
-            {previewTeam.map((previewTeam, i) => (
-              <PreviewProfile key={i} {...previewTeam} />
-            ))}
-          </div>
-
-          <div className="text-left max-w-3xl space-y-[32px] mt-10">
-            <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mb-8">
-              Team Scraps
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full mt-10">
-          {scrapsTeam.map((scrapsTeam, i) => (
-            <ScrapsProfile key={i} {...scrapsTeam} />
-          ))}
-        </div>
-
-          <div className="text-left max-w-3xl space-y-[32px] mt-10">
-            <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mb-8">
-              Team Sync
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full mt-10">
-            {syncTeam.map((syncTeam, i) => (
-              <SyncProfile key={i} {...syncTeam} />
-            ))}
-          </div>
-
-          <div className="text-left max-w-3xl space-y-[32px] mt-10">
-            <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal mb-8">
-              Team Curate
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full mt-10">
-            {curateTeam.map((curateTeam, i) => (
-              <CurateProfile key={i} {...curateTeam} />
-            ))}
-          </div>
+        
+        {/* Fall '24 Fellows Section */}
+        <section className="flex flex-col justify-between mb-[160px] mt-[80px]">
+          <ProfileGrid
+            title="Fall '24 Fellows"
+            subtitle="Team Preview"
+            data={previewTeam}
+            ProfileComponent={FlipProfile}
+          />
+          <ProfileGrid
+            title="Team Scraps"
+            data={scrapsTeam}
+            ProfileComponent={FlipProfile}
+          />
+          <ProfileGrid
+            title="Team Sync"
+            data={syncTeam}
+            ProfileComponent={FlipProfile}
+          />
+          <ProfileGrid
+            title="Team Curate"
+            data={curateTeam}
+            ProfileComponent={FlipProfile}
+          />
+        </section>
+          
           {/* Projects Section */}
           <div id="projects" className="text-left max-w-3xl space-y-4 mt-[144px]">
           <p className="text-[#3A3A3A] font-inter text-[16px] font-semibold leading-normal">
@@ -132,7 +96,6 @@ export default function Page() {
           </p>
             <AnimatedProjectsInfo />
           </div>
-        </section>
       </div>
     </main>
   );
