@@ -1,36 +1,73 @@
 interface MentorCardProps {
-    imageSrc?: string
-    name: string
-    title: string
-    company: string
-    logo?: React.ReactNode // optional logo like a Microsoft or Meta icon
-  }
-  
-  export default function MentorCard({
-    imageSrc,
-    name,
-    title,
-    company,
-    logo,
-  }: MentorCardProps) {
-    return (
-      <div className="flex flex-col items-start text-left">
-        {/* headshot or placeholder */}
-        <div className="w-[215px] h-[215px] rounded-xl overflow-hidden mb-3">
-          {imageSrc ? (
-            <img
-              src={imageSrc}
-              alt={name}
-              className="w-full h-full object-cover"
-            />
-          ) : null}
+  imageSrc?: string;
+  name: string;
+  title: string;
+  company: string;
+  logo?: React.ReactNode;
+  backImageSrc?: string; // optional flip-side image
+}
+
+export default function MentorCard({
+  imageSrc,
+  backImageSrc,
+  name,
+  title,
+  company,
+  logo,
+}: MentorCardProps) {
+  return (
+    <div className="flex flex-col items-start text-left w-[215px]">
+      {/* Flipping Card Container */}
+      <div
+        className="relative w-[215px] h-[215px] mb-3 group"
+        style={{ perspective: "1000px" }}
+      >
+        <div
+          className="relative w-full h-full transition-transform duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {/* Front Side */}
+          <div
+            className="absolute inset-0"
+            style={{ backfaceVisibility: "hidden" }}
+          >
+            {imageSrc ? (
+              <img
+                src={imageSrc}
+                alt={name}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            ) : (
+              <div className="w-full h-full bg-gray-300 rounded-xl" />
+            )}
+          </div>
+
+          {/* Back Side */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+            }}
+          >
+            {backImageSrc ? (
+              <img
+                src={backImageSrc}
+                alt={`${name} back`}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            ) : (
+              <div className="w-full h-full bg-gray-400 rounded-xl" />
+            )}
+          </div>
         </div>
-  
-        {/* name + title */}
-        <p className="text-[20px] font-semibold">{name}</p>
-        <p className="text-[14px] font-normal mt-1">
-          {title} @ <span className="font-semibold">{company}</span> {logo}
-        </p>
       </div>
-    )
-  }
+
+      {/* Name + Title */}
+      <p className="text-[20px] font-semibold">{name}</p>
+      <p className="text-[14px] font-normal mt-1">
+        {title} @ <span className="font-semibold">{company}</span> {logo}
+      </p>
+    </div>
+  );
+}
