@@ -8,7 +8,7 @@ import WhoWeAre from "@/components/landing/WhoWeAre";
 import MeetTheFellowship from "@/components/landing/MeetTheFellowship";
 import MentorProfile from "@/components/landing/MentorProfile";
 import { mentors } from "@/data/mentors";
-import ArrowButton from "@/components/landing/ArrowButton"
+import Recruitment from "@/components/landing/Recruitment";
 
 export default function Page() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,6 +57,8 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <Recruitment />
 
       {/* what is product – own full screen */}
       <section className="relative min-h-screen">
