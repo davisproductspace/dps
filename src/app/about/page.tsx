@@ -21,16 +21,18 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
       {/* Hero Section */}
+      {/* Hero Section */}
       <section className="min-h-[400px] md:min-h-screen relative w-full overflow-hidden">
         <img
           src="/images/about-page.svg"
           alt="stacked logos background"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
-        <div className="hidden md:block w-full px-[7.5rem] absolute bottom-[9rem] z-10">
+        <div className="hidden md:block w-full absolute bottom-[9rem] z-10">
           <ImageMarqueeDemo />
         </div>
       </section>
+
 
       {/* Page Container */}
       <div className="w-full px-4 sm:px-[7.5rem]">

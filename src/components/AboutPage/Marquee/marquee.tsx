@@ -102,4 +102,3 @@ export function Marquee({ children, className, pauseOnHover = false, reverse = f
     </>
   )
 }
-
