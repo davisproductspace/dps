@@ -21,14 +21,13 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-[#FDFAFF] text-[#3a3a3a] flex flex-col items-center justify-center">
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="min-h-[400px] md:min-h-screen relative w-full overflow-hidden">
         <img
           src="/images/about-page.svg"
           alt="stacked logos background"
           className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
         />
-        <div className="hidden md:block w-full absolute bottom-[9rem] z-10">
+        <div className="hidden md:block w-full absolute bottom-[7rem] z-10">
           <ImageMarqueeDemo />
         </div>
       </section>
@@ -36,12 +35,11 @@ export default function Page() {
 
       {/* Page Container */}
       <div className="w-full px-4 sm:px-[7.5rem]">
-        {/* Stats Section */}
         <section className="flex flex-col items-start">
           <p className="text-[#3A3A3A] font-inter text-[16px] font-medium leading-normal">
             Nationwide, Product Space is home to...
           </p>
-          <div className="flex flex-col sm:flex-row sm:space-x-[60px] mt-[16px] space-y-[32px] sm:space-y-0 w-full">
+          <div className="flex flex-col sm:flex-row sm:space-x-[60px] space-y-[32px] sm:space-y-0 w-full">
             <StatsCard value="15+" label="Chapters" />
             <StatsCard value="500+" label="Students" />
             <StatsCard value="1000+" label="Alumni" />
@@ -50,7 +48,7 @@ export default function Page() {
 
         {/* Leadership Section */}
         <section>
-          <div className="text-left max-w-3xl space-y-4 mt-[144px]">
+          <div className="text-left max-w-3xl space-y-4">
             <h2 className="text-[24px] sm:text-[28px] md:text-[36px] font-semibold mb-8 whitespace-nowrap text-left w-full">
               Meet the Davis Squad!
             </h2>

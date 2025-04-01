@@ -1,106 +1,106 @@
-"use client"
-import { Marquee } from "./marquee"
-import { useEffect, useState } from "react"
+"use client";
+import { Marquee } from "./marquee";
+import { useEffect, useState } from "react";
 
 interface ImageItem {
-  id: number
-  width: number
-  height: number
-  alt: string
-  src: string
+  id: number;
+  width: number;
+  height: number;
+  alt: string;
+  src: string;
 }
 
-// First row with the provided image sizes
+// First row with updated sizes (1.25x)
 const firstRowImages: ImageItem[] = [
   {
     id: 1,
-    width: 288,
-    height: 160,
+    width: 360, // 288 * 1.25
+    height: 200, // 160 * 1.25
     alt: "Image 1",
     src: "images/Marquee/Row1/Picutre6.png",
   },
   {
     id: 2,
-    width: 168,
-    height: 160,
+    width: 210, // 168 * 1.25
+    height: 200,
     alt: "Image 2",
     src: "images/Marquee/Row1/Picture4.png",
   },
   {
     id: 3,
-    width: 228,
-    height: 160,
+    width: 285, // 228 * 1.25
+    height: 200,
     alt: "Image 3",
     src: "images/Marquee/Row1/Picture5.png",
   },
   {
     id: 4,
-    width: 228,
-    height: 160,
+    width: 285,
+    height: 200,
     alt: "Image 4",
     src: "images/Marquee/Row1/Picture2.png",
   },
   {
     id: 5,
-    width: 228,
-    height: 160,
+    width: 285,
+    height: 200,
     alt: "Image 5",
     src: "images/Marquee/Row1/Picture3.png",
   },
   {
     id: 6,
-    width: 168,
-    height: 160,
+    width: 210,
+    height: 200,
     alt: "Image 6",
     src: "images/Marquee/Row1/Picture1.png",
   },
-]
+];
 
-// Second row with the provided image sizes
+// Second row with updated sizes (1.25x)
 const secondRowImages: ImageItem[] = [
   {
     id: 7,
-    width: 228,
-    height: 160,
+    width: 285,
+    height: 200,
     alt: "Image 7",
     src: "images/Marquee/Row2/Picture1.png",
   },
   {
     id: 8,
-    width: 228,
-    height: 160,
+    width: 285,
+    height: 200,
     alt: "Image 8",
     src: "images/Marquee/Row2/Picture2.png",
   },
   {
     id: 9,
-    width: 168,
-    height: 160,
+    width: 210,
+    height: 200,
     alt: "Image 9",
     src: "images/Marquee/Row2/Picture6.png",
   },
   {
     id: 10,
-    width: 288,
-    height: 160,
+    width: 360,
+    height: 200,
     alt: "Image 10",
     src: "images/Marquee/Row2/Picture5.png",
   },
   {
     id: 11,
-    width: 168,
-    height: 160,
+    width: 210,
+    height: 200,
     alt: "Image 11",
     src: "images/Marquee/Row2/Picture3.png",
   },
   {
     id: 12,
-    width: 228,
-    height: 160,
+    width: 285,
+    height: 200,
     alt: "Image 12",
     src: "images/Marquee/Row2/Picture4.png",
   },
-]
+];
 
 function MarqueeImage({ image }: { image: ImageItem }) {
   return (
@@ -136,13 +136,13 @@ export function ImageMarqueeDemo() {
   };
 
   return (
-    <div className="relative flex w-full flex-col justify-center overflow-hidden gap-6 px-0">
-      <Marquee pauseOnHover speed={15} className="py-2">
+    <div className="relative flex w-full flex-col justify-center overflow-hidden px-0">
+      <Marquee pauseOnHover speed={15}>
         {reorderImages(firstRowImages).map((image) => (
           <MarqueeImage key={image.id} image={image} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover speed={15} className="py-2">
+      <Marquee reverse pauseOnHover speed={15}>
         {reorderImages(secondRowImages).map((image) => (
           <MarqueeImage key={image.id} image={image} />
         ))}
