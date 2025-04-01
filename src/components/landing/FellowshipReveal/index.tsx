@@ -42,8 +42,8 @@ export default function FellowshipReveal({ targetRef, cards }: FellowshipRevealP
     }
 
     // update index thresholds to show cards
-    if (latest < 0.6) setActiveIndex(0);
-    else if (latest < 0.8) setActiveIndex(1);
+    if (latest < 0.65) setActiveIndex(0);
+    else if (latest < 0.75) setActiveIndex(1);
     else setActiveIndex(2);
   });
 
