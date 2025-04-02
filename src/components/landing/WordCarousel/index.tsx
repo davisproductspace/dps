@@ -62,11 +62,11 @@ export default function WordCarousel() {
             <div
               key={i}
               style={{ height: `${carouselHeight}rem` }}
-              className={
+              className={`${
                 word === "Are"
                   ? "text-[#3a3a3a]"
                   : "bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent"
-              }
+              } ${rotatingMiddleWords.includes(word) ? "w-auto" : "w-full"}`}
             >
               {word}
             </div>
@@ -79,14 +79,14 @@ export default function WordCarousel() {
         <span
           className={`transition-colors duration-500 leading-none ${
             showFinal
-              ? "bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent"
+              ? "bg-gradient-to-r from-[#E06287] to-[#AB60BD] bg-clip-text text-transparent"
               : "text-[#3a3a3a]"
           }`}
         >
           Product
         </span>
         {showFinal && (
-          <span className="animate-fade-slide-delayed bg-gradient-to-r from-[#765DF2] to-[#A594FD] bg-clip-text text-transparent leading-none">
+          <span className="animate-fade-slide-delayed bg-gradient-to-r from-[#AB60BD] to-[#765DF2] bg-clip-text text-transparent leading-none">
             Space.
           </span>
         )}

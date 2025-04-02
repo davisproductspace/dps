@@ -21,14 +21,14 @@ export function TextReveal({
               style={{
                 opacity: useTransform(scrollYProgress, [0.05, 0.15], [0.3, 1]),
               }}
-              className="text-[1.5rem] md:text-[2.25rem] font-semibold leading-tight bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent transition-transform duration-300"
+              className="text-[1.5rem] md:text-[2.75rem] font-semibold leading-tight bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent transition-transform duration-300"
             >
               {heading}
             </motion.div>
           )}
 
           {/* animated paragraph */}
-          <p className="text-[1.5rem] md:text-[2.25rem] font-semibold text-[#3a3a3a] font-sans leading-snug flex flex-wrap">
+          <p className="text-[1.5rem] md:text-[2.75rem] font-semibold text-[#3a3a3a] font-sans leading-snug flex flex-wrap">
             {content.map((chunk, idx) => {
               if (typeof chunk === "string") {
                 const words = chunk.split(" ");

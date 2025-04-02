@@ -72,9 +72,7 @@ export default function Page() {
       <section className="relative min-h-screen">
         <TextReveal
           heading={
-            <h2 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold leading-tight bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
-              What Is Product?
-            </h2>
+            <h2>What Is Product?</h2>
           }
           content={[
             "A product manager is the CEO of a product. They communicate with customers to understand their needs, come up with solutions that address them, and collaborate with designers, engineers, and marketers to transform those ideas into",

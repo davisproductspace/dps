@@ -14,7 +14,7 @@ export const projects = [
       secondQuote:
         "So, that’s what they set out to solve. Complete with a high-fidelity UI/UX and an actionable go-to-market strategy, the team presents Sync -- collaborative Stories for Instagram!",
       name: "Sync",
-      designation: "Caitlin Chan, Puja Devarasetty, Anita Thata, Jason Zhang",
+      designation: "Anita Thata, Caitlin Chan, Jason Zhang, Puja Devarasetty",
       src: "/images/Projects/Sync.png",
     },
     {
@@ -23,7 +23,7 @@ export const projects = [
       secondQuote:
         "Uniquely leveraging Instagram’s existing Explore page, the team built Curate: explore content your friends have viewed and shared right in your feed.",
       name: "Curate",
-      designation: "Amber Zhang, Arshiya Banerjee, Clara Yin, Jason Zhang",
+      designation: "Amber Zhang, Arshiya Banerjee, Clara Yin, John Missal",
       src: "/images/Projects/Curate.png",
     },
     {

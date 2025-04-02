@@ -16,8 +16,8 @@ export default function ScrollBar({ targetRef }: ScrollBarProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest < 0.6) setActiveIndex(0);
-    else if (latest < 0.8) setActiveIndex(1);
+    if (latest < 0.65) setActiveIndex(0);
+    else if (latest < 0.75) setActiveIndex(1);
     else setActiveIndex(2);
   });
 

@@ -43,11 +43,12 @@ export default function MeetTheFellowship() {
             href="https://airtable.com/app9URmfQlcVa2te1/pag1EiBrWOyZVvvnw/form"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:inline-block bg-[#FDFAFF] shadow-md text-lg cursor-pointer hover:opacity-90 hover:font-bold transition-all bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-medium px-8 py-3 rounded-md mt-4"
+            className="hidden lg:inline-block bg-white shadow-md text-sm cursor-pointer hover:opacity-90 hover:font-bold transition-all font-medium px-8 py-2 rounded-lg mt-2"
           >
-            Join the Pack
+            <span className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
+              Join Us!
+            </span>
           </Link>
-
         </div>
 
         {/* fellowship cards */}
