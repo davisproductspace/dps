@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Mobile layout */}
+      {/* mobile layout */}
       <div className="flex md:hidden justify-center items-center gap-6 py-6">
         <a href="mailto:davisproductspace@email.com" aria-label="Email">
           <MailIcon className="w-6 h-6" />

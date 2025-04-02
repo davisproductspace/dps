@@ -11,7 +11,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   {
     name: "Apply",
-    href: "https://airtable.com/app9URmfQlcVa2te1/pag1EiBrWOyZVvvnw/form",
+    href: "/apply",
   },
 ];
 
