@@ -53,14 +53,14 @@ export default function Page() {
               <p className="text-[12px] font-medium leading-snug">
                 We’re a national community of students with a mission to become the world’s next generation of product leaders.
               </p>
-              <a
+              {/* <a
                 href="https://airtable.com/app9URmfQlcVa2te1/pag1EiBrWOyZVvvnw/form"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-white shadow-md text-[12px] cursor-pointer hover:opacity-90 hover:font-bold transition-all bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent font-medium px-8 py-1 rounded-md mt-4"
               >
                 Join Us
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

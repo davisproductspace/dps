@@ -39,7 +39,7 @@ export default function MeetTheFellowship() {
           </p>
 
           {/* desktop-only button */}
-          <Link
+          {/* <Link
             href="https://airtable.com/app9URmfQlcVa2te1/pag1EiBrWOyZVvvnw/form"
             target="_blank"
             rel="noopener noreferrer"
@@ -48,7 +48,7 @@ export default function MeetTheFellowship() {
             <span className="bg-gradient-to-r from-[#E06287] to-[#765DF2] bg-clip-text text-transparent">
               Join Us!
             </span>
-          </Link>
+          </Link> */}
         </div>
 
         {/* fellowship cards */}
